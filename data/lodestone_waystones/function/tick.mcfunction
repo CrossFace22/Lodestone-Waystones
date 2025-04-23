@@ -1,0 +1,4 @@
+function lodestone_waystones:set_waystone
+execute as @e[type=minecraft:interaction,tag=lodestone_waystone_interaction] if data entity @s attack run function lodestone_waystones:delete_waystone with entity @s
+execute as @e[type=minecraft:interaction,tag=lodestone_waystone_interaction] at @s unless block ~ ~-1 ~ lodestone run function lodestone_waystones:delete_waystone with entity @s
+execute as @e[type=minecraft:interaction,tag=lodestone_waystone_interaction] at @s unless entity @e[type=item,tag=lodestone_waystone_compass,distance=..0.999] run function lodestone_waystones:delete_waystone with entity @s

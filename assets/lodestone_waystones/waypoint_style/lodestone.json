@@ -1,0 +1,9 @@
+{
+  "near_distance": 128,
+  "far_distance": 332,
+  "sprites": [
+    "lodestone_waystones:lodestone_0",
+    "lodestone_waystones:lodestone_1",
+    "lodestone_waystones:lodestone_2"
+  ]
+}

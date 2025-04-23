@@ -1,0 +1,1 @@
+tellraw @a {translate:"WARNING: Lodestone Waystones Resource Pack is missing!",with:[{text:"Lodestone Waystones loaded!\n\nA Data Pack by: CrossFace22",color:"green"}],color:"red"}

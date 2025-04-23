@@ -1,0 +1,27 @@
+execute as @e[type=item] if data entity @s {Item:{id:"minecraft:compass",count:1,components:{"minecraft:lodestone_tracker":{}}}} at @s align xyz positioned ~.5 ~ ~.5 unless entity @e[tag=lodestone_waystone,tag=enabled,distance=..0.999] align xyz if block ~ ~-.5 ~ minecraft:lodestone run summon item ~.5 ~.5 ~.5 {Tags:["lodestone_waystone_compass"],Item:{id:"minecraft:compass",count:1,components:{"enchantment_glint_override":true}},PickupDelay:32767,Age:-32767}
+execute as @e[type=item] if data entity @s {Item:{id:"minecraft:compass",count:1,components:{"minecraft:lodestone_tracker":{}}}} at @s align xyz positioned ~.5 ~ ~.5 unless entity @e[tag=lodestone_waystone,tag=enabled,distance=..0.999] align xyz if block ~ ~-.5 ~ minecraft:lodestone run summon minecraft:interaction ~.5 ~ ~.5 {Tags:[lodestone_waystone_interaction]}
+execute as @e[type=item] if data entity @s {Item:{id:"minecraft:compass",count:1,components:{"minecraft:lodestone_tracker":{}}}} at @s align xyz positioned ~.5 ~ ~.5 unless entity @e[tag=lodestone_waystone,tag=enabled,distance=..0.999] align xyz if block ~ ~-.5 ~ minecraft:lodestone run particle minecraft:white_smoke ~.5 ~.4 ~.5 .5 .5 .5 0 50 force
+execute as @e[type=item] if data entity @s {Item:{id:"minecraft:compass",count:1,components:{"minecraft:lodestone_tracker":{}}}} at @s align xyz positioned ~.5 ~ ~.5 unless entity @e[tag=lodestone_waystone,tag=enabled,distance=..0.999] align xyz if block ~ ~-.5 ~ minecraft:lodestone run particle minecraft:wax_on ~.5 ~.4 ~.5 .2 .2 .2 1 10 force
+execute as @e[type=item] if data entity @s {Item:{id:"minecraft:compass",count:1,components:{"minecraft:lodestone_tracker":{}}}} at @s align xyz positioned ~.5 ~ ~.5 unless entity @e[tag=lodestone_waystone,tag=enabled,distance=..0.999] align xyz if block ~ ~-.5 ~ minecraft:lodestone run playsound minecraft:block.respawn_anchor.set_spawn master @a ~.5 ~ ~.5 1 1.3
+execute as @e[type=item] if data entity @s {Item:{id:"minecraft:compass",count:1,components:{"minecraft:lodestone_tracker":{}}}} at @s align xyz positioned ~.5 ~ ~.5 unless entity @e[tag=lodestone_waystone,tag=enabled,distance=..0.999] align xyz if block ~ ~-.5 ~ minecraft:lodestone run summon minecraft:armor_stand ~.5 ~ ~.5 {Tags:[lodestone_waystone],Invisible:1b,Small:1b}
+execute as @e[tag=lodestone_waystone] if entity @s[tag=!enabled] run attribute @s minecraft:waypoint_transmit_range base set 60000000.0
+execute as @e[tag=lodestone_waystone] if entity @s[tag=!enabled] run waypoint modify @s style set lodestone_waystones:lodestone
+execute as @e[tag=lodestone_waystone] if entity @s[tag=!enabled] at @s unless block ~ ~ ~ #minecraft:wool_carpets run waypoint modify @s color white
+execute as @e[tag=lodestone_waystone] if entity @s[tag=!enabled] at @s if block ~ ~ ~ minecraft:black_carpet run waypoint modify @s color hex 1c1c1c
+execute as @e[tag=lodestone_waystone] if entity @s[tag=!enabled] at @s if block ~ ~ ~ minecraft:gray_carpet run waypoint modify @s color dark_gray
+execute as @e[tag=lodestone_waystone] if entity @s[tag=!enabled] at @s if block ~ ~ ~ minecraft:light_gray_carpet run waypoint modify @s color gray
+execute as @e[tag=lodestone_waystone] at @s if entity @s[tag=!enabled] if block ~ ~ ~ minecraft:blue_carpet run waypoint modify @s color hex 1a12ff
+execute as @e[tag=lodestone_waystone] at @s if entity @s[tag=!enabled] if block ~ ~ ~ minecraft:green_carpet run waypoint modify @s color dark_green
+execute as @e[tag=lodestone_waystone] at @s if entity @s[tag=!enabled] if block ~ ~ ~ minecraft:pink_carpet run waypoint modify @s color light_purple
+execute as @e[tag=lodestone_waystone] at @s if entity @s[tag=!enabled] if block ~ ~ ~ minecraft:light_blue_carpet run waypoint modify @s color aqua
+execute as @e[tag=lodestone_waystone] at @s if entity @s[tag=!enabled] if block ~ ~ ~ minecraft:cyan_carpet run waypoint modify @s color dark_aqua
+execute as @e[tag=lodestone_waystone] at @s if entity @s[tag=!enabled] if block ~ ~ ~ minecraft:purple_carpet run waypoint modify @s color hex 68219D
+execute as @e[tag=lodestone_waystone] at @s if entity @s[tag=!enabled] if block ~ ~ ~ minecraft:magenta_carpet run waypoint modify @s color hex BA42B0
+execute as @e[tag=lodestone_waystone] at @s if entity @s[tag=!enabled] if block ~ ~ ~ minecraft:red_carpet run waypoint modify @s color dark_red
+execute as @e[tag=lodestone_waystone] at @s if entity @s[tag=!enabled] if block ~ ~ ~ minecraft:orange_carpet run waypoint modify @s color gold
+execute as @e[tag=lodestone_waystone] at @s if entity @s[tag=!enabled] if block ~ ~ ~ minecraft:lime_carpet run waypoint modify @s color green
+execute as @e[tag=lodestone_waystone] at @s if entity @s[tag=!enabled] if block ~ ~ ~ minecraft:white_carpet run waypoint modify @s color white
+execute as @e[tag=lodestone_waystone] at @s if entity @s[tag=!enabled] if block ~ ~ ~ minecraft:yellow_carpet run waypoint modify @s color yellow
+execute as @e[tag=lodestone_waystone] at @s if entity @s[tag=!enabled] if block ~ ~ ~ minecraft:brown_carpet run waypoint modify @s color hex 613C20
+execute as @e[type=item] if data entity @s {Item:{id:"minecraft:compass",count:1,components:{"minecraft:lodestone_tracker":{}}}} at @s align xyz positioned ~.5 ~ ~.5 unless entity @e[tag=lodestone_waystone,tag=enabled,distance=..0.999] if block ~ ~-.5 ~ minecraft:lodestone run kill @s
+execute as @e[tag=lodestone_waystone] if entity @s[tag=!enabled] run tag @s add enabled

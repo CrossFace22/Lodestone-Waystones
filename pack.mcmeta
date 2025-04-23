@@ -1,0 +1,19 @@
+{
+  "pack": {
+    "pack_format": 58,
+    "description": {
+      "text": "Lodestone Waystones DP\n",
+      "type": "text",
+      "extra": [
+        {
+          "text": "A new way to know your way!",
+          "type": "text",
+          "color": "#F28733",
+          "bold": false
+        }
+      ],
+      "color": "#4EA0FF",
+      "bold": true
+    }
+  }
+}
